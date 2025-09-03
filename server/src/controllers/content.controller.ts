@@ -24,7 +24,7 @@ export const getContent = async (req: Request, res: Response) => {
         const userId = req.userId
         const content = await ContentModel.findOne({
             userId: userId
-        })
+        }).populate("userId")
         res.status(200).json({ msg: content })
     } catch (error) {
         res.status(400).json({ msg: `${error}` })
