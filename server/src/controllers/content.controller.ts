@@ -30,3 +30,17 @@ export const getContent = async (req: Request, res: Response) => {
         res.status(400).json({ msg: `${error}` })
     }
 }
+export const deleteContnt = async (req: Request, res: Response) => {
+    const contentId = req.body.contentId
+    try {
+        await ContentModel.deleteMany({
+            contentId,
+            //@ts-ignore
+            userId: req.userId
+        })
+        res.status(200).json({msg:"content deleted"})
+
+    } catch (error) {
+        res.status(400).json({ msg: error })
+    }
+}
