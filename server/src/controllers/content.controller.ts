@@ -25,7 +25,7 @@ export const getContent = async (req: Request, res: Response) => {
         const content = await ContentModel.findOne({
             userId: userId
         })
-        res.status(200).json({ msg: `${content}` })
+        res.status(200).json({ msg: content })
     } catch (error) {
         res.status(400).json({ msg: `${error}` })
     }
