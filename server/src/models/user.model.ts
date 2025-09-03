@@ -1,6 +1,7 @@
-import mongoose, { model, Schema }  from "mongoose";
+import mongoose, { model, Schema, InferSchemaType }  from "mongoose";
 const UserSchema= new Schema ({
     username: {type:String, unique: true},
     password :String
 })
-export const UserModel= model("user",UserSchema)
+export type User = InferSchemaType<typeof UserSchema>;
+export const UserModel = model<User>("user", UserSchema);
