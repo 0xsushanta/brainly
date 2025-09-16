@@ -1,6 +1,7 @@
-// import express from "express"
-// import { userMiddleware } from "../middlewares/auth.middleware"
-// const router=express.Router()
-// router.post("/share",userMiddleware,)
-// router.get("/:sharelink")
-// export default router
+import express from "express"
+import { userMiddleware } from "../middlewares/auth.middleware"
+import { contentShare, sharelink } from "../controllers/share.controller"
+const router=express.Router()
+router.post("/share",userMiddleware,contentShare)
+router.get("/:sharelink",sharelink)
+export default router
