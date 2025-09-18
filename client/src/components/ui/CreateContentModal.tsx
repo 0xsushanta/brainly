@@ -1,4 +1,4 @@
-import { CrossIcon } from "../icon/CrossIcon";
+import { CrossIcon } from "../../icon/CrossIcon";
 import { Button } from "./Button";
 
 export function CreateContentModal({ open, onClose }) {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Share } from "../icon/Share";
+import { Share } from "../../icon/Share";
 interface CardProps {
     title: string
     link: string

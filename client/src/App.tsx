@@ -1,36 +1,11 @@
-import { useState } from "react"
-import { Button } from "./components/Button"
-import { Card } from "./components/Card"
-import { CreateContentModal } from "./components/CreateContentModal"
-import { Add } from "./icon/Add"
-import { Share } from "./icon/Share"
-
-
-
+import React from 'react'
+import Dashboard from './components/pages/Dashboard'
 
 function App() {
-
-const [modalOpen, setModelOpen]= useState(true)
   return (
-    <>
-      <div className="p-4">
-        <CreateContentModal open={modalOpen} onClose={()=>{
-          setModelOpen(false)
-        }}/>
-        <div className="flex justify-end gap-4">
-
-          <Button onClick={()=>{
-            setModelOpen(true)
-          }} variant="primary" text="Add Content" startIcon={<Add />} ></Button>
-          <Button variant="secondary" text="Share Brain" startIcon={<Share />}></Button>
-        </div>
-        <div className="flex gap-4">
-          <Card type="x" link="https://twitter.com/Hiteshdotcom/status/1968201148365672568" title="hitesh post" />
-          {/* <Card type="youtube" /> */}
-          <Card link="https://www.youtube.com/watch?v=leWuDQoDaYY" title="first video" type="youtube" />
-        </div>
-      </div>
-    </>
+    <div>
+      <Dashboard />
+    </div>
   )
 }
 
