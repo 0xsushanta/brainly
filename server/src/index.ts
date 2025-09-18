@@ -4,9 +4,11 @@ import { connectdb } from './db/db'
 import userRoutes from './routes/user.routes'
 import contentRoutes from './routes/content.routes'
 import shareRoutes from './routes/sahre.routes'
+import cors from "cors"
 // import shareRoutes from './routes/sahre.routes'
 dotenv.config()
 const app= express()
+app.use(cors())
 app.use(express.json())
 
 connectdb()
